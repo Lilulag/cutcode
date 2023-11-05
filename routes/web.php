@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [\App\Http\Controllers\IndexController::class, 'index'])
+    ->middleware('r')->name('home');
+
+Route::get('/posts', \App\Http\Controllers\Post\IndexController::class)->name('post.index');
+Route::get('/posts/{post}', \App\Http\Controllers\Post\ShowController::class)->name('post.show');
