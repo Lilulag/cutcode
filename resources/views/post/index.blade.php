@@ -1,6 +1,6 @@
 @extends('layout.app')
 
-@section('title', 'Главная')
+@section('title', 'Посты')
 
 @section('content')
 
@@ -19,5 +19,7 @@
             </div>
         </div>
     @endforeach
+
+    {{ $posts->links() }}
 </div>
 @endsection
