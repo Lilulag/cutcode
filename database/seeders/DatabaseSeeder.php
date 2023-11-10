@@ -6,6 +6,7 @@ namespace Database\Seeders;
 use App\Models\AdminUser;
 use App\Models\Post;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -19,7 +20,7 @@ class DatabaseSeeder extends Seeder
         AdminUser::factory(1)->create([
             'name' => 'Admin',
             'email' => 'lilula739@gmail.com',
-            'password' => 'Admin',
+            'password' => Hash::make('admin'),
         ]);
 
         // \App\Models\User::factory()->create([
