@@ -2,11 +2,16 @@
     <div class="mb-2 sm:mb-0 inner">
 
         <a href="{{ route('home') }}" class="text-2xl no-underline text-grey-darkest hover:text-blue-dark font-sans font-bold">Laravel с нуля</a><br>
-        <span class="text-xs text-grey-dark">Уроки от CutCode</span>
+        <span class="text-xs text-grey-dark">CutCode</span>
 
     </div>
 
     <div class="sm:mb-0 self-center">
-        <a href="#" class="text-md no-underline text-grey-darker hover:text-blue-dark ml-2 px-1">Войти</a>
+        @guest()
+            <a href="{{ route('login') }}" class="text-md no-underline text-grey-darker hover:text-blue-dark ml-2 px-1">Войти</a>
+        @endguest
+        @auth()
+            <a href="{{ route('logout') }}" class="text-md no-underline text-grey-darker hover:text-blue-dark ml-2 px-1">Выйти</a>
+        @endauth
     </div>
 </nav>
